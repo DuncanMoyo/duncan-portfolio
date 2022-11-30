@@ -6,6 +6,7 @@ import MySkills from "./scenes/MySkills";
 import DotGroup from "./scenes/DotGroup";
 import Projects from "./scenes/Projects";
 import Testimonials from "./scenes/Testimonials";
+import Footer from "./scenes/Footer";
 import Contact from "./scenes/Contact";
 import LineGradient from "./components/LineGradient";
 
@@ -58,6 +59,7 @@ function App() {
       <div className="w-5/6 mx-auto md:h-full">
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 }
