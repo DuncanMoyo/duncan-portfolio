@@ -57,7 +57,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             <button className="bg-deep-blue p-2 rounded-md hover:bg-yellow hover:text-deep-blue  transition duration-500">
               <a
                 target="_blank"
-                href="https://drive.google.com/file/d/1iXk9v2XBkrNNT4OKMC1dtDx8bcauaK45/view?usp=sharing"
+                href="https://drive.google.com/file/d/1jJpUf8f05YfTrSph48jeQRiMrZAzpNO6/view?usp=sharing"
                 rel="noreferrer"
               >
                 RESUME
