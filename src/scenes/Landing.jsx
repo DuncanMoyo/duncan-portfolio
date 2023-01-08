@@ -9,26 +9,26 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <section
       id="home"
-      className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10"
+      className="md:flex md:justify-between md:items-center md:h-full gap-16 pt-10"
     >
       {/* IMAGE SECTION */}
       <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
         {isAboveMediumScreens ? (
           <div
-            className="relative  z-0 ml-20 before:absolute before:-top-20 
-            before:-left-20 before:rounded-t-[400px] before:w-full before: max-w-[400px]
+            className="relative z-0 ml-20 before:absolute before:-top-10 
+            before:-left-10 before:w-full before: max-w-[400px]
             before:h-full before:border-2 before:border-blue before:z-[-1] "
           >
             <img
               alt="profile"
-              src="assets/profile-image.png"
+              src="assets/duncan.png"
               className="hover:filter:saturate-200 transit duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
             />
           </div>
         ) : (
           <img
             alt="profile"
-            src="assets/profile-image.png"
+            src="assets/duncan.png"
             className="hover:filter:saturate-200 transit duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
           />
         )}
@@ -46,19 +46,32 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
+          <p className="text-5xl mb-12 font-playfair">Hi, my name is</p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
           <p className="text-6xl font-playfair z-10 text-center md:text-start">
-            Jane {""}
+            Duncan {""}
             <span
               className="xs:relative xs:text-deep-blue xs:font-semibold z-20
-              xs:before:content-brush before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1]"
+              xs:before:content-brush before:absolute before:-left-[40px] before:-top-[70px] before:z-[-1]"
             >
-              Esper
+              Moyo
             </span>
           </p>
-          <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            This is my demo for a portfolio page that i have created. I hope you
-            like it. I incorporated a lot of tailwind-CSS and it was fun. I can
-            build more like this if needed :)
+          <p className="mt-10 mb-7 text-lg text-center md:text-start">
+            I’m a software engineer specializing in building (and occasionally
+            designing) exceptional digital experiences. Currently, I’m focused
+            on building accessible, human-centered products.
           </p>
         </motion.div>
 
@@ -67,8 +80,8 @@ const Landing = ({ setSelectedPage }) => {
           className="flex mt-5 justify-center md:justify-start"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true, amount: 1.0 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
@@ -78,14 +91,14 @@ const Landing = ({ setSelectedPage }) => {
             className="bg-gradient-rainbow text-deep-blue rounded-sm py-3 px-7 font-semibold
             hover:bg-blue hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
-            href="contact"
+            href="#contact"
           >
             Contact Me
           </AnchorLink>
           <AnchorLink
-            className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
+            className="rounded-r-sm bg-gradient-rainbow py-0.5 pr-0.5"
             onClick={() => setSelectedPage("contact")}
-            href="contact"
+            href="#contact"
           >
             <div
               className="bg-deep-blue hover:text-red transition duration-500
@@ -100,7 +113,7 @@ const Landing = ({ setSelectedPage }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.9 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
@@ -114,6 +127,3 @@ const Landing = ({ setSelectedPage }) => {
 };
 
 export default Landing;
-
-
-

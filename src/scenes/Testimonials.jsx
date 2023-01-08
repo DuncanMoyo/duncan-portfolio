@@ -2,10 +2,8 @@ import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 
 const Testimonials = () => {
-  const testimonialStyles = `mx-auto relative max-w-[400px] h-[350px] 
-  flex flex-col justify-end p-16 mt-48 before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2`;
   return (
-    <section id="testimonials" className="pt-32 pb-16">
+    <section id="testimonials" className="pt-32 pb-20">
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
@@ -21,63 +19,67 @@ const Testimonials = () => {
         <p className="font-playfair font-semibold text-4xl mb-5 text-red">
           TESTIMONIALS
         </p>
-        <LineGradient width="mx-auto w-2/4 " />
+        <LineGradient width="mx-auto w-2/5" />
         <p className="mt-10">
-          Check out what other people are saying about my work.Aliquam, amet dui
-          feugiat facilisi dui. Aliquam aliquet integer ut fames odio in at.
+          Here's What People are Saying About My Work. Aliquam aliquet integer
+          ut fames odio in at. At magna ornare dictum lectus.
         </p>
       </motion.div>
 
       {/* TESTIMONIALS */}
-      <div className="md:flex md:justify-between gap-8 ">
+      <div className="md:flex md:justify-between gap-8">
         <motion.div
-          className={`bg-blue ${testimonialStyles} before:content-person1`}
+          className="mx-auto relative bg-blue max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
+            before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-person1"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-6xl">"</p>
+          <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            What to do when the fox jumps over the fence
+            A auctor pharetra hendrerit mattis amet etiam interdum platea.
           </p>
         </motion.div>
 
         <motion.div
-          className={`bg-red ${testimonialStyles} before:content-person2`}
+          className="mx-auto relative bg-red max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
+            before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-person2"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay:0.2, duration: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-6xl">"</p>
+          <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            How do mosquitoes know you're there
+            Aliquam aliquet integer ut fames odio in at. At magna ornare dictum
+            lectus.
           </p>
         </motion.div>
 
         <motion.div
-          className={`bg-yellow ${testimonialStyles} before:content-person3`}
+          className="mx-auto relative bg-yellow max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
+            before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-person3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay:0.4, duration: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-6xl">"</p>
+          <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            Do dogs love you or are they just looking for someone to feed them
+            Fames odio in at. At magna ornare dictum lectus.
           </p>
         </motion.div>
       </div>

@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
-import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./scenes/Navbar";
 import Landing from "./scenes/Landing";
-import MySkills from "./scenes/MySkills";
 import DotGroup from "./scenes/DotGroup";
-import Projects from "./scenes/Projects";
-import Testimonials from "./scenes/Testimonials";
-import Footer from "./scenes/Footer";
-import Contact from "./scenes/Contact";
+import MySkills from "./scenes/MySkills";
 import LineGradient from "./components/LineGradient";
-
+import Projects from "./scenes/Projects";
+import Contact from "./scenes/Contact";
+import Footer from "./scenes/Footer";
+import useMediaQuery from "./hooks/useMediaQuery";
+import { useEffect, useState } from "react";
+import Testimonials from "./scenes/Testimonials";
+import { motion } from "framer-motion";
 
 function App() {
-  const [selectedPage, setselectedPage] = useState("home");
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+  const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
+  const isDesktop = useMediaQuery("(min-width: 1060px)");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) setIsTopOfPage(true);
+      if (window.scrollY === 0) {
+        setIsTopOfPage(true);
+        setSelectedPage("home");
+      }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
     window.addEventListener("scroll", handleScroll);
@@ -30,34 +33,42 @@ function App() {
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
-        setselectedPage={setselectedPage}
+        setSelectedPage={setSelectedPage}
       />
       <div className="w-5/6 mx-auto md:h-full">
-        {isAboveMediumScreens && (
+        {isDesktop && (
           <DotGroup
             selectedPage={selectedPage}
-            setselectedPage={setselectedPage}
+            setSelectedPage={setSelectedPage}
           />
         )}
-        <Landing
-          selectedPage={selectedPage}
-          setselectedPage={setselectedPage}
-        />
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
-        <MySkills />
+        <motion.div onViewportEnter={() => setSelectedPage("home")}>
+          <Landing setSelectedPage={setSelectedPage} />
+        </motion.div>
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto">
-        <Projects />
+        <motion.div onViewportEnter={() => setSelectedPage("skills")}>
+          <MySkills />
+        </motion.div>
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
-        <Testimonials />
+      <div className="w-5/6 mx-auto">
+        <motion.div onViewportEnter={() => setSelectedPage("projects")}>
+          <Projects />
+        </motion.div>
       </div>
-      <div className="w-5/6 mx-auto md:h-full">
-        <Contact />
+      <LineGradient />
+      {/* <div className="w-5/6 mx-auto">
+        <motion.div onViewportEnter={() => setSelectedPage("testimonials")}>
+          <Testimonials />
+        </motion.div>
+      </div> */}
+      <LineGradient />
+      <div className="w-5/6 mx-auto">
+        <motion.div onViewportEnter={() => setSelectedPage("contact")}>
+          <Contact />
+        </motion.div>
       </div>
       <Footer />
     </div>

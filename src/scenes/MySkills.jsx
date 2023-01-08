@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 const MySkills = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   return (
-    <section id="skills" className="pt-10 pb-24">
+    <section id="skills" className="pb-20">
       {/* HEADER AND IMAGE SECTION */}
-      <div className="md:flex md:justify-between md:gap-16 mt-32">
+      <div className="md:flex md:justify-between md:gap-16 mt-32 py-10">
         <motion.div
           className="md:w-1/3"
           initial="hidden"
@@ -70,19 +70,19 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            I will say this AGAIN! This is my demo for a portfolio page that i
-            have created. I hope you like it. I incorporated a lot of
-            tailwind-CSS and it was fun. I can build more like this if needed :)
+            I'm a year into my software development journey, so be prepared to
+            meet someone who is always willing to add a lot more arrows to his
+            quiver.{" "}
           </p>
         </motion.div>
 
-          {/* INNOVATIVE */}
-          <motion.div
+        {/* INNOVATIVE */}
+        <motion.div
           className="md:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{delay: 0.2, duration: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
@@ -98,14 +98,13 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            I'm sure you get it now. This is my demo for a portfolio page that i
-            have created. I hope you like it. I incorporated a lot of
-            tailwind-CSS and it was fun. I can build more like this if needed :)
+            Always trying to push the boundaries of what's possible. Willing to
+            take the path least travelled to get to the destination ahead.
           </p>
         </motion.div>
 
-          {/* IMAGINATIVE */}
-          <motion.div
+        {/* IMAGINATIVE */}
+        <motion.div
           className="md:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
@@ -126,9 +125,7 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            I will say this AGAIN! This is my demo for a portfolio page that i
-            have created. I hope you like it. I incorporated a lot of
-            tailwind-CSS and it was fun. I can build more like this if needed :) yey!
+            I'm not crazy, my mom had me tested. 
           </p>
         </motion.div>
       </div>
